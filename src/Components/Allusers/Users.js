@@ -11,16 +11,16 @@ export default function Users(){
         .then(allUsers => setUsers(allUsers))
     },[])
 
-    // const names = users.map(user => {
-    //     return(
-    //         <li key={user.id}>{user.name}</li>
-    //     )
-    // })
+    const names = users.map(user => {
+        return(
+            <Usercard key={user.id} name={user.name} userName={user.username}/>
+        )
+    })
 
     return(
         <div>
             <h1>Users</h1>
-           <Usercard/>
+            {names}
         </div>
     )
 }
