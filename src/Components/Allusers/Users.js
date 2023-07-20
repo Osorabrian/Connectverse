@@ -13,7 +13,7 @@ export default function Users(){
     },[])
 
     const searchUser = users.filter((user) => {
-        return user.name.toLowerCase().includes(search) || user.username.toLowerCase().includes(search)
+        return user.name.toLowerCase().includes(search.toLowerCase()) || user.username.toLowerCase().includes(search.toLowerCase())
     })
 
     const names = searchUser.map(user => {
