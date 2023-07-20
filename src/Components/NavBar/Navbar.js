@@ -12,9 +12,10 @@ export default function Navbar(){
                 <div className="navbar-collapse collapse" id="navbar">
                     <ul className="navbar-nav">
                         <NavLink to="/" className="nav-link">Feed</NavLink>
-                        <NavLink to="/about" className="nav-link">Following</NavLink>
-                        <NavLink to="/projects" className="nav-link">My Posts</NavLink>
-                        <NavLink to="/contacts" className="nav-link">PROFILE NAME</NavLink>
+                        <NavLink to="/following" className="nav-link">Following</NavLink>
+                        <NavLink to="/my_posts" className="nav-link">My Posts</NavLink>
+                        <NavLink to="/all_users" className="nav-link">All Users</NavLink>
+                        <NavLink to="/my_profile" className="nav-link">PROFILE NAME</NavLink>
                     </ul>
                 </div>
                 </div>
