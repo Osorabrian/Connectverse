@@ -15,6 +15,7 @@ export default function Navbar(){
                         <NavLink to="/following" className="nav-link">Following</NavLink>
                         <NavLink to="/my_posts" className="nav-link">My Posts</NavLink>
                         <NavLink to="/all_users" className="nav-link">All Users</NavLink>
+                        <NavLink to="/log_in" className="nav-link">Log In</NavLink>
                         <NavLink to="/my_profile" className="nav-link">PROFILE NAME</NavLink>
                     </ul>
                 </div>
