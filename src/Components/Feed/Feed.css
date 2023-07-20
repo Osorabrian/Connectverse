@@ -3,3 +3,8 @@
     margin: auto;
     margin-bottom: 30px;
 }
+
+#search-bar{
+    border-radius: 8px;
+    margin-bottom: 20px;
+}

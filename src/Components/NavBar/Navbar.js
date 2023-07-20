@@ -5,8 +5,8 @@ export default function Navbar(){
     return(
         <nav className="navbar bg-primary">
             <div className="container-fluid">
-                <NavLink className='navbar-brand ms-2'>ConnectVerse</NavLink>
-                <button className="navbar-toggler me-2" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+                <NavLink className='navbar-brand'>ConnectVerse</NavLink>
+                <button className="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
                 <div className="navbar-collapse collapse" id="navbar">
