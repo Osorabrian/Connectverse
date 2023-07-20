@@ -4,6 +4,7 @@ import Usercard from './UserCard'
 export default function Users(){
 
     const [users, setUsers] = useState([])
+    const [search, setSearch] = useState('')
 
     useEffect(() => {
         fetch('https://jsonplaceholder.typicode.com/users')
@@ -11,7 +12,11 @@ export default function Users(){
         .then(allUsers => setUsers(allUsers))
     },[])
 
-    const names = users.map(user => {
+    const searchUser = users.filter((user) => {
+        return user.name.toLowerCase().includes(search) || user.username.toLowerCase().includes(search)
+    })
+
+    const names = searchUser.map(user => {
         return(
             <Usercard key={user.id} name={user.name} userName={user.username}/>
         )
@@ -20,6 +25,7 @@ export default function Users(){
     return(
         <div>
             <h1>Users</h1>
+            <input placeholder='Search User...' type='text' id='search-users' onChange={(e) => {setSearch(e.target.value)}}/>
             {names}
         </div>
     )
