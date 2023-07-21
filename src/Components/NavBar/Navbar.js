@@ -1,10 +1,10 @@
 import React from "react";
 import {NavLink} from 'react-router-dom'
-import {useStore} from '../../State/state'
+import {useTextStore} from '../../State/state'
 
 export default function Navbar(){
 
-    const isLoggedIn = useStore((state) => state.setIsLoggedOut)
+    const isLoggedIn = useTextStore((state) => state.setIsLoggedOut)
 
     return(
         <nav className="navbar bg-primary">

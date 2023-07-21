@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import { useNavigate } from 'react-router-dom'
 import {BsBoxArrowInRight} from 'react-icons/bs'
 import './Login.css'
-import { useStore } from '../../State/state'
+import { useTextStore } from '../../State/state'
 
 export default function Login(){
 
@@ -11,7 +11,7 @@ export default function Login(){
     const [password, setPassword] = useState('')
     const [error, setError] = useState(false)
     const navigate = useNavigate()
-    const isLoggedIn = useStore((state) => state.setIsLoggedIn)
+    const isLoggedIn = useTextStore((state) => state.setIsLoggedIn)
 
     useEffect(() => {
         fetch('https://jsonplaceholder.typicode.com/users')
