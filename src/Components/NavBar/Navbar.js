@@ -21,8 +21,13 @@ export default function Navbar(){
                         <NavLink to="/my_posts" className="nav-link">My Posts</NavLink>
                         <NavLink to="/all_users" className="nav-link">All Users</NavLink>
                         <NavLink to="/log_in" className="nav-link">Log In</NavLink>
-                        <NavLink to="/my_profile" className="nav-link">{user.name}</NavLink>
-                        <NavLink to="/log_in" className="nav-link" onClick={isLoggedIn}>Log Out</NavLink>
+                        <NavLink className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                {user.name}
+                        </NavLink>
+                        <ul className="dropdown-menu">
+                            <NavLink className="dropdown-item nav-link" to="/my_profile">View Profile</NavLink>
+                            <NavLink to="/log_in" className="nav-link dropdown-item" onClick={isLoggedIn}>Log Out</NavLink>
+                        </ul>
                     </ul>
                 </div>
                 </div>

@@ -3,7 +3,7 @@ import Postcard from '../Feed/Postcard'
 import '../Feed/Feed.css'
 import { useDataStore } from '../../State/state'
 
-export const MyPosts = () => {
+export default function MyPosts(){
 
     const user = useDataStore((state) => state.user)
     const [search, setSearch] = useState('')
