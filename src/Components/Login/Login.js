@@ -8,6 +8,7 @@ export default function Login(){
     const [users, setUsers] = useState([])
     const [userName, setUserName] = useState('')
     const [password, setPassword] = useState('')
+    const [error, setError] = useState(false)
     const navigate = useNavigate()
 
     useEffect(() => {
@@ -22,11 +23,9 @@ export default function Login(){
             if(users[i].username === userName && users[i].address.zipcode === password){
                 navigate('/')
             }else{
-                console.log('wrong')
+                setError(true)
             }
-        }
-        console.log(users)
-        
+        }        
     }
 
     return(
@@ -35,6 +34,15 @@ export default function Login(){
             <h1 className='mt-5'>Log In</h1>
 
             <form id='login-form' className='mt-2' onSubmit={handleLogIn}>
+                {
+                    error && (
+                    
+                            <div id='error-div'>
+                                <p> * Invalid Username or Password Try Again</p>
+                            </div>
+                        
+                    )
+                }
                 <div className='mb-4'>
                     <label className='form-label'>Username:</label>
                     <input type='text' placeholder='Enter Username' className='form-control' required onChange={(e) => {setUserName(e.target.value)}}/>

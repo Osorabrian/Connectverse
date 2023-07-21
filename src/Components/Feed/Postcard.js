@@ -10,6 +10,10 @@ export default function Postcard({title, body}){
                    <h1>{title}</h1>
                 </div>
                 <div className="card-text">{body}</div>
+                <hr></hr>
+                <div>
+                    
+                </div>
             </div>
         </div>
     )
