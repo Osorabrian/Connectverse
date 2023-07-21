@@ -12,7 +12,7 @@ export default function Login(){
     const [error, setError] = useState(false)
     const navigate = useNavigate()
     const isLoggedIn = useTextStore((state) => state.setIsLoggedIn)
-    const userId = useDataStore((state) => state.setUserId)
+    const userId = useDataStore((state) => state.setUser)
 
     useEffect(() => {
         fetch('https://jsonplaceholder.typicode.com/users')
@@ -26,7 +26,7 @@ export default function Login(){
         for(let i = 0; i < users.length; i++){
             if(users[i].username === userName && users[i].address.zipcode === password){
                 ans = 1
-                userId(users[i].id)
+                userId(users[i])
             }
         }   
         if(ans === 1){
@@ -53,7 +53,7 @@ export default function Login(){
                         
                     )
                 }
-                
+
                 <div className='mb-4'>
                     <label className='form-label'>Username:</label>
                     <input type='text' placeholder='Enter Username' className='form-control' required onChange={(e) => {setUserName(e.target.value)}}/>

@@ -7,8 +7,6 @@ export const useTextStore = create((set) => ({
 }))
 
 export const useDataStore = create((set) => ({
-    profileName: '',
-    userId: 0,
-    setprofileName: (str) => set({profileName: str}),
-    setUserId: (int) => set({userId: int})
+    user: {},
+    setUser: (int) => set({user: int})
 }))

@@ -1,10 +1,11 @@
 import React from "react";
 import {NavLink} from 'react-router-dom'
-import {useTextStore} from '../../State/state'
+import {useDataStore, useTextStore} from '../../State/state'
 
 export default function Navbar(){
 
     const isLoggedIn = useTextStore((state) => state.setIsLoggedOut)
+    const user = useDataStore((state) => state.user)
 
     return(
         <nav className="navbar bg-primary">
@@ -20,7 +21,7 @@ export default function Navbar(){
                         <NavLink to="/my_posts" className="nav-link">My Posts</NavLink>
                         <NavLink to="/all_users" className="nav-link">All Users</NavLink>
                         <NavLink to="/log_in" className="nav-link">Log In</NavLink>
-                        <NavLink to="/my_profile" className="nav-link">PROFILE NAME</NavLink>
+                        <NavLink to="/my_profile" className="nav-link">{user.name}</NavLink>
                         <NavLink to="/log_in" className="nav-link" onClick={isLoggedIn}>Log Out</NavLink>
                     </ul>
                 </div>
