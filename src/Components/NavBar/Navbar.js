@@ -17,6 +17,7 @@ export default function Navbar(){
                         <NavLink to="/all_users" className="nav-link">All Users</NavLink>
                         <NavLink to="/log_in" className="nav-link">Log In</NavLink>
                         <NavLink to="/my_profile" className="nav-link">PROFILE NAME</NavLink>
+                        <NavLink to="/log_in" className="nav-link">Log Out</NavLink>
                     </ul>
                 </div>
                 </div>
