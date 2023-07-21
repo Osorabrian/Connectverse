@@ -11,8 +11,7 @@ export default function Postcard({title, body}){
                 </div>
                 <div className="card-text">{body}</div>
                 <hr></hr>
-                <div>
-                    
+                <div>        
                 </div>
             </div>
         </div>
