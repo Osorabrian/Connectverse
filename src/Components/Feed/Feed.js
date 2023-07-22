@@ -21,7 +21,7 @@ export default function Feed(){
 
     const allPosts = data.map((post) => {
         return(
-            <Postcard key={post.id} title={post.title} body={post.body}/>
+            <Postcard key={post.id} id={post.id} title={post.title} body={post.body}/>
         )
     })
 
