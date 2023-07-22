@@ -7,6 +7,7 @@ import Navbar from '../NavBar/Navbar';
 import Login from '../Login/Login';
 import ViewProfile from '../Profile/ViewProfile';
 import ViewPost from '../Feed/ViewPost';
+import CreatePost from '../MyPosts/CreatePost';
 
 function App() {
   return (
@@ -18,7 +19,9 @@ function App() {
         <Route element={<Login/>} path='log_in' />
         <Route element={<MyPosts/>} path='my_posts' />
         <Route element={<ViewProfile/>} path='my_profile' />
-        <Route element={<ViewPost/>} path='post/:id' />
+        <Route element={<ViewPost/>} path='/post/:id' />
+        <Route element={<ViewPost/>} path='my_posts/post/:id' />
+        <Route element={<CreatePost/>} path='my_posts/create' />
       </Routes>
     </div>
   );

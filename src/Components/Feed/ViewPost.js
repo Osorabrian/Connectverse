@@ -11,13 +11,13 @@ export default function ViewPost(){
         fetch(`https://jsonplaceholder.typicode.com/posts/${id}`)
         .then(response => response.json())
         .then(post => setPost(post))
-    },[id])
+    })
 
     useEffect(() => {
         fetch(`https://jsonplaceholder.typicode.com/posts/${id}/comments`)
         .then(response => response.json())
         .then(comments => setComments(comments))
-    },[id])
+    })
 
     const commentList = comments.map((comment) => {
         return(
