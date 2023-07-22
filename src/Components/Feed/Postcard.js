@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import {NavLink} from 'react-router-dom'
 import './Feed.css'
 
 export default function Postcard({id, title, body}){
@@ -9,19 +10,22 @@ export default function Postcard({id, title, body}){
         fetch(`https://jsonplaceholder.typicode.com/posts/${id}/comments`)
         .then(response => response.json())
         .then(comments => setComments(comments))
-    })
+    },[id])
     
     return(
         <div className="card" id='postcard'>
 
             <div className ="card-body">
 
+            <NavLink to={`post/${id}`} id="redirect">
                 <div className="card-title">
                     <h1>{title}</h1>
                 </div>
 
                 <div className="card-text">{body}</div>
-
+            </NavLink>
+                  
+                
                 <hr></hr>
 
                <div className="row">
