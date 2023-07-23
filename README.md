@@ -19,6 +19,9 @@ This web application that enables users to:
  
 
  and many more.   
+ For this project i used the <a href='https://jsonplaceholder.typicode.com/'>JSON Placeholder Mock API data</a>.  
+ The API does not support CRUD operations hence i used state management to perform some operations such as adding a post, liking a post e.t.c
+  
 
 ##  Live Link
 https://connectverse.vercel.app/
