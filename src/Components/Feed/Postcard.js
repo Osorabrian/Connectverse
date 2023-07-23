@@ -21,7 +21,7 @@ export default function Postcard({id, title, body}){
 
             <NavLink to={`post/${id}`} id="redirect">
                 <div className="card-title">
-                    <h1>{title}</h1>
+                    <h5>{title}</h5>
                 </div>
 
                 <div className="card-text">
