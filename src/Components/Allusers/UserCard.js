@@ -29,27 +29,32 @@ export default function Usercard({id, name, userName}){
    }
 
     return(
-        <div className="row">
-            <hr></hr>
-                <div className="col-2">
-                    <RxAvatar id='avatar' className="justify-content-center ms-3 mt-3"/>
+            <div className="card mb-3">
+                <div className="row">
+
+                    <div className="col-2 ">
+                        <i className="fa-solid fa-user-astronaut fa-2xl" style={{color: "#074fca"}} id='avatar'></i>
+                    </div>
+
+                    <div className="col-6 mt-2">
+                        <h5>{name}</h5>
+                        <p>@{userName}</p>
+                    </div>
+
+                    <div className="col-4 mt-2">
+                        {
+                            following && (
+                            <button className="btn btn-primary mt-2" id='follow-buton' onClick={handleFollow}>Follow  <AiOutlinePlus/></button>
+                            )
+                        }
+                        {
+                            !following && (
+                            <button className="btn border-primary text-primary mt-2" id='unfollow-buton' onClick={handleUnfollow}>Unfollow...</button>
+                            )
+                        }
+                    </div>
+
                 </div>
-                <div className="col-6">
-                    <h5>{name}</h5>
-                    <p>{userName}</p>
-                </div>
-                <div className="col-4">
-                    {
-                        following && (
-                           <button className="btn btn-primary mt-2" id='follow-buton' onClick={handleFollow}>Follow  <AiOutlinePlus/></button>
-                        )
-                    }
-                    {
-                        !following && (
-                           <button className="btn border-primary text-primary mt-2" id='unfollow-buton' onClick={handleUnfollow}>Following...</button>
-                        )
-                    }
-                </div>
-        </div>
+            </div>
     )
 }

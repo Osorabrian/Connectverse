@@ -24,7 +24,7 @@ export default function Users(){
 
     return(
         <div>
-            <h1>Users</h1>
+            <h1 className='mt-3'>Users</h1>
             <input placeholder='Search User...' type='text' id='search-users' onChange={(e) => {setSearch(e.target.value)}}/>
             {names}
         </div>
