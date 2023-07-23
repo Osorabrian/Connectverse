@@ -18,7 +18,7 @@ export default function Users(){
 
     const names = searchUser.map(user => {
         return(
-            <Usercard key={user.id} name={user.name} userName={user.username}/>
+            <Usercard key={user.id} id={user.id} name={user.name} userName={user.username}/>
         )
     })
 

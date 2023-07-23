@@ -8,5 +8,9 @@ export const useTextStore = create((set) => ({
 
 export const useDataStore = create((set) => ({
     user: {},
-    setUser: (int) => set({user: int})
+    setUser: (int) => set({user: int}),
+    following: [],
+    setFollowing: (arr) => set({following: arr}),
+    subscription: false,
+    setSubscription: (val) => set({subscription: val})
 }))

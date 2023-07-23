@@ -1,19 +1,32 @@
 import React,{useState} from "react";
 import {RxAvatar} from 'react-icons/rx'
 import {AiOutlinePlus} from 'react-icons/ai'
+import { useDataStore } from "../../State/state";
 import './User.css'
 
-export default function Usercard({name, userName}){
+export default function Usercard({id, name, userName}){
 
-    const [following, setFollowing] = useState(true)
+    let [following, setFollowing] = useState()
+    const follows = useDataStore(state => state.following)
 
     function handleFollow(){
-       return setFollowing(false)
+       setFollowing(false)
+       follows.push(id)
+       console.log(follows)
     }
 
     function handleUnfollow(){
-        return setFollowing(true)
+        setFollowing(true)
+        const index = follows.findIndex((e) => e === id)
+        delete follows[index]
+        console.log(follows)
     }
+
+   if(!follows.includes(id)){
+    following = true
+   }else{
+    following = false
+   }
 
     return(
         <div className="row">

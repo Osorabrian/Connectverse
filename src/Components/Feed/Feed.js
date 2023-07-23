@@ -1,13 +1,14 @@
 import React, {useState, useEffect} from "react";
 import Postcard from "./Postcard";
 import './Feed.css'
-import { useTextStore } from "../../State/state";
+import GooglePay from "./GooglePay";
+import { useDataStore } from "../../State/state";
 
 export default function Feed(){
 
     const [posts, setPosts] = useState([])
     const [search, setSearch] = useState('')
-    const logIn = useTextStore((state) => state.isLoggedIn)
+    const subscription = useDataStore(state => state.subscription)
 
     useEffect(() => {
         fetch('https://jsonplaceholder.typicode.com/posts')
@@ -37,16 +38,19 @@ export default function Feed(){
             <input type={'text'} placeholder='Search Post...' id='search-bar' onChange={(e) => {setSearch(e.target.value)}}/>
             <div>
                 {
-                    logIn ? (
+                    subscription ? (
                         <div className="row">
                             {allPosts}
+                            
                         </div>
                     ):(
                         <div className="row">
                             {limitedPosts}
+                            <GooglePay/>
                         </div>
                     )
                 }
+            
             </div>
         </>
     )
