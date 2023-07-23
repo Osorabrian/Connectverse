@@ -23,6 +23,33 @@ This web application that enables users to:
 ##  Live Link
 https://connectverse.vercel.app/
 
+## ScreenShots
+
+### Log In Page
+![image](https://github.com/Osorabrian/Telemedicine-EDoktari/assets/83941341/9774f334-863e-4e80-a83c-bb53dbe7069c)
+
+
+### Feed Page
+![Alt text](image-2.png)
+
+### View Posts Page
+![image](https://github.com/Osorabrian/Telemedicine-EDoktari/assets/83941341/01d5d613-2a30-4c14-8fe2-3b27125dd20e)
+
+### My Posts Page
+![Alt text](image-1.png)
+
+### All Users Page
+![image](https://github.com/Osorabrian/Telemedicine-EDoktari/assets/83941341/cd2406bf-d259-4647-9b86-55083aa3b27f)
+
+
+### Following Page
+![image](https://github.com/Osorabrian/Telemedicine-EDoktari/assets/83941341/5608563b-66b2-4f7b-837d-693e4b8a1ad6)
+
+
+### View Profile
+![image](https://github.com/Osorabrian/Telemedicine-EDoktari/assets/83941341/c9375c2a-e716-4f63-be92-3ec62130a09f)
+
+
 ## Technologies Used
 Languages:        
 [![My Skills](https://skillicons.dev/icons?i=js,html,css)](https://skillicons.dev)

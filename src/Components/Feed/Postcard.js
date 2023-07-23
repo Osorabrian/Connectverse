@@ -28,7 +28,7 @@ export default function Postcard({userId, id, title, body}){
 
             <div className="row">
                 <div className="col-2">
-                    <i class="fa-solid fa-user-ninja" style={{color: "#d0f80d"}}></i>
+                    <i className="fa-solid fa-user-ninja" style={{color: "#d0f80d"}}></i>
                 </div>
                 <div className="col-10">
                     @{user.name}
