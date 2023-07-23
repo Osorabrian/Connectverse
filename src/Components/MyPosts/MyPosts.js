@@ -17,7 +17,7 @@ export default function MyPosts(){
         .then(posts => setPosts(posts))
     })
 
-    posts.push(post)
+    posts.unshift(post)
 
     const myPosts = posts.filter((post) => post.userId === user.id)
     

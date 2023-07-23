@@ -6,6 +6,8 @@ export default function ViewPost(){
 
     const {id} = useParams()
     const [post, setPost] = useState({})
+    const [like, setLike] = useState(0)
+    const [likeColor, setLikeColor] = useState(false)
     const [comments, setComments] = useState([])
 
     useEffect(() => {
@@ -24,7 +26,7 @@ export default function ViewPost(){
         return(
             <div key={comment.id} id='comment'>
                 <div className="row">
-                    <i className="fa-solid fa-user-astronaut col-2" style={{color: '#84c71f'}} id='profile-avatar'></i>
+                    <i className="fa-solid fa-user-astronaut col-1" style={{color: '#84c71f'}} id='profile-avatar'></i>
                     <p className="col-8">{comment.email}</p>
                 </div>
                 <strong>{comment.name}</strong>
@@ -36,18 +38,33 @@ export default function ViewPost(){
 
     return(
         <div id='post-view'>
-            <h1>{post.title}</h1>
+            <h1 className="mt-5">{post.title}</h1>
             <p>{post.body}</p>
             <div className="row" >
                     <div className="col-6">
-                        <i className="fa-regular fa-heart fa-beat" style={{color:" #161cd0"}}></i>
+                        {
+                            !likeColor && (
+                                <div className="row">
+                                    <i className="fa-regular fa-heart fa-beat col-2" style={{color:" rgb(255, 0, 0)"}} onClick={() => {setLikeColor(true); setLike(like + 1)}}></i>
+                                    <p className="col-4">{like}</p>
+                                </div>   
+                            )
+                        }
+                        {
+                            likeColor && (
+                                <div className="row">
+                                    <i className="fa-solid fa-heart fa-beat col-2" style={{color: "#ec0936"}} onClick={() => {setLikeColor(false); setLike(0)}}></i>
+                                    <p className="col-4">{like}</p>
+                                </div>
+                            )
+                        }
                     </div>
                     <div className="col-6 row">
                         <i className="fa-regular fa-comment fa-bounce col-2" style={{color: "#38ad3a"}}></i><p className="col-2">{comments.length}</p>
                     </div>
             </div>
             <hr></hr>
-            <h1>Comments</h1>
+            <h1 className="mb-5">Comments</h1>
             {commentList}
         </div>
     )

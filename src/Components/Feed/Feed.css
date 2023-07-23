@@ -25,3 +25,12 @@
 #hr{
     width: 100%;
 }
+
+#post-view{
+    max-width: 1000px;
+    margin:auto;
+}
+
+#comment{
+    text-align: left;
+}
