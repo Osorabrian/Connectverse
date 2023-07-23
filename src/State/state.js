@@ -12,5 +12,7 @@ export const useDataStore = create((set) => ({
     following: [],
     setFollowing: (arr) => set({following: arr}),
     subscription: false,
-    setSubscription: (val) => set({subscription: val})
+    setSubscription: (val) => set({subscription: val}),
+    post: {},
+    setPost: (dict) => set({post: dict})
 }))

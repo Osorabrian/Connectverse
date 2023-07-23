@@ -9,12 +9,15 @@ export default function MyPosts(){
     const user = useDataStore((state) => state.user)
     const [search, setSearch] = useState('')
     const [posts, setPosts] = useState([])
+    const post = useDataStore(state => state.post)
     
     useEffect(() => {
         fetch('https://jsonplaceholder.typicode.com/posts')
         .then(response => response.json())
         .then(posts => setPosts(posts))
-    },[])
+    })
+
+    posts.push(post)
 
     const myPosts = posts.filter((post) => post.userId === user.id)
     
