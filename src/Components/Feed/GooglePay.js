@@ -1,13 +1,14 @@
 import React from 'react'
 import GooglePayButton from '@google-pay/button-react';
 import { useDataStore } from '../../State/state';
+import './Feed.css'
 
 export default function GooglePay(){
 
     const setSubscription = useDataStore(state => state.setSubscription)
 
     return(
-        <div className='mb-5'>
+        <div className='mb-5' id='google-pay'>
             <p>Subscribe to view more posts</p>
             <GooglePayButton
                 environment="TEST"

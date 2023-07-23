@@ -31,7 +31,9 @@ export default function Following(){
     return(
         <div>
             <h1>Following</h1>
-            {allPosts}
+            <div className='row'>
+                {allPosts}
+            </div>
         </div>
     )
 }

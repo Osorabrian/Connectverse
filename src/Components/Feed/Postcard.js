@@ -2,9 +2,10 @@ import React, { useEffect, useState } from "react";
 import {NavLink} from 'react-router-dom'
 import './Feed.css'
 
-export default function Postcard({id, title, body}){
+export default function Postcard({userId, id, title, body}){
 
     const [comments, setComments] = useState([])
+    const [user, setUser] = useState({})
     const [likeColor, setLikeColor] = useState(false)
     const [like, setLike] = useState(0)
 
@@ -13,11 +14,28 @@ export default function Postcard({id, title, body}){
         .then(response => response.json())
         .then(comments => setComments(comments))
     },[id])
+
+    useEffect(() => {
+        fetch(`https://jsonplaceholder.typicode.com/users/${userId}`)
+        .then(response => response.json())
+        .then(user => setUser(user))
+    })
     
     return(
-        <div className="card" id='postcard'>
+        <div className="card h-60" id='postcard'>
 
-            <div className ="card-body">
+            <div className ="card-body" id='card-body'>
+
+            <div className="row">
+                <div className="col-2">
+                    <i class="fa-solid fa-user-ninja" style={{color: "#d0f80d"}}></i>
+                </div>
+                <div className="col-10">
+                    @{user.name}
+                </div>
+            </div>
+
+            <hr></hr>
 
             <NavLink to={`post/${id}`} id="redirect">
                 <div className="card-title">

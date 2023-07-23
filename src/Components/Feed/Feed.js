@@ -22,7 +22,7 @@ export default function Feed(){
 
     const allPosts = data.map((post) => {
         return(
-            <Postcard key={post.id} id={post.id} title={post.title} body={post.body}/>
+            <Postcard key={post.id} id={post.id} userId={post.userId} title={post.title} body={post.body}/>
         )
     })
 
@@ -34,7 +34,7 @@ export default function Feed(){
 
     return(
         <>
-            <h1>Feed</h1>
+            <h1 className="mt-3">Feed</h1>
             <input type={'text'} placeholder='Search Post...' id='search-bar' onChange={(e) => {setSearch(e.target.value)}}/>
             <div>
                 {
@@ -46,6 +46,7 @@ export default function Feed(){
                     ):(
                         <div className="row">
                             {limitedPosts}
+                            <hr id='hr'></hr>
                             <GooglePay/>
                         </div>
                     )
