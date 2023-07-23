@@ -24,14 +24,14 @@ export default function Following(){
 
     const allPosts = followingPosts.map((post) => {
         return (
-            <Postcard key={post.id} id={post.id} title={post.title} body={post.body}/>
+            <Postcard key={post.id} id={post.id} userId={post.userId} title={post.title} body={post.body}/>
         )
     })
 
     return(
         <div>
-            <h1>Following</h1>
-            <div className='row'>
+            <h1 className='mt-3'>Following</h1>
+            <div className='row mt-3'>
                 {allPosts}
             </div>
         </div>

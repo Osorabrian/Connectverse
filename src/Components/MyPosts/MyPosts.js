@@ -20,16 +20,18 @@ export default function MyPosts(){
     
     const searchPost = myPosts.filter((post) => post.title.toLowerCase().includes(search.toLowerCase())).map((post) => {
         return(
-            <Postcard key={post.id} id={post.id} title={post.title} body={post.body}/>
+            <Postcard key={post.id} id={post.id} userId={post.userId} title={post.title} body={post.body}/>
         )
     })
     
   return (
     <div>
-        <h1>My Posts</h1>
-        <NavLink className='btn btn-primary mb-3' to='/my_posts/create'>Create Post   <i className="fa-solid fa-plus" style={{color: "#ffffff"}}></i></NavLink>
+        <h1 className='mt-3'>My Posts</h1>
+        <NavLink className='btn btn-primary mb-3' to='/my_posts/create'>Create Post   <i className="fa-solid fa-plus" style={{color: "#ffffff"}}></i></NavLink><br></br>
         <input type={'text'} placeholder='Search My Posts...' id='search-bar' onChange={(e) => {setSearch(e.target.value)}}/>
-        {searchPost}
+        <div className='row'>
+            {searchPost}
+        </div>
     </div>
   )
 }
