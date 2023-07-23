@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import './Feed.css'
 
 export default function ViewPost(){
 
@@ -21,11 +22,12 @@ export default function ViewPost(){
 
     const commentList = comments.map((comment) => {
         return(
-            <div key={comment.id}>
+            <div key={comment.id} id='comment'>
                 <div className="row">
-                    <i className="fa-solid fa-user-astronaut col-1" style={{color: '#84c71f'}} id='profile-avatar'></i>
-                    <strong className="col-11">{comment.name}</strong>
+                    <i className="fa-solid fa-user-astronaut col-2" style={{color: '#84c71f'}} id='profile-avatar'></i>
+                    <p className="col-8">{comment.email}</p>
                 </div>
+                <strong>{comment.name}</strong>
                 <p>{comment.body}</p>
                 <hr></hr>
             </div>
@@ -33,10 +35,10 @@ export default function ViewPost(){
     })
 
     return(
-        <div>
+        <div id='post-view'>
             <h1>{post.title}</h1>
             <p>{post.body}</p>
-            <div className="row">
+            <div className="row" >
                     <div className="col-6">
                         <i className="fa-regular fa-heart fa-beat" style={{color:" #161cd0"}}></i>
                     </div>
