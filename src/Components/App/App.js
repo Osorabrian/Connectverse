@@ -9,8 +9,12 @@ import ViewProfile from '../Profile/ViewProfile';
 import ViewPost from '../Feed/ViewPost';
 import CreatePost from '../MyPosts/CreatePost';
 import Following from '../Following/Following';
+import { useTextStore } from '../../State/state';
 
 function App() {
+
+  const logIn = (state => state.isLoggedIn)
+
   return (
     <div className="App">
       < Navbar />
