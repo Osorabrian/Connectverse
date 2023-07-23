@@ -1,5 +1,4 @@
 import React,{useState} from "react";
-import {RxAvatar} from 'react-icons/rx'
 import {AiOutlinePlus} from 'react-icons/ai'
 import { useDataStore } from "../../State/state";
 import './User.css'

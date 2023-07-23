@@ -1,6 +1,9 @@
 #login-form{
     text-align: left;
     padding: 30px;
+    max-width: 500px;
+    margin: auto;
+    border: 2px solid;
 }
 
 #login-button{

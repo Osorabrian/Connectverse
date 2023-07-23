@@ -38,7 +38,7 @@ export default function Login(){
     }
 
     return(
-        <div>
+        <div id='background'>
 
             <h1 className='mt-5'>Log In</h1>
 

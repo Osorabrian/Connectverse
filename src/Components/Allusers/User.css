@@ -16,7 +16,7 @@
 
 .card{
     max-width: 1000px;
-    margin: auto;
+    margin: 5px auto;
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.3);
 }
 
