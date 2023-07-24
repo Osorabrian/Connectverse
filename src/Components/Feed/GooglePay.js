@@ -11,7 +11,7 @@ export default function GooglePay(){
         <div className='mb-5' id='google-pay'>
             <p>Subscribe to view more posts</p>
             <GooglePayButton
-                environment="TEST"
+                environment="PRODUCTION"
                 paymentRequest={{
                     apiVersion: 2,
                     apiVersionMinor: 0,
