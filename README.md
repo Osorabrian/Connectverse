@@ -84,3 +84,6 @@ To set up the project follow the instructions below:
 - In my post page you can view all your posts and create a post too.
 - You can also view your profile in my profile page.
 - You can logout when done.
+
+## Challenges
+Awaiting google pay to approve the business credentials so as to get merchant id currently it only works in test environment

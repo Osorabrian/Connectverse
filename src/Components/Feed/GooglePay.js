@@ -11,7 +11,7 @@ export default function GooglePay(){
         <div className='mb-5' id='google-pay'>
             <p>Subscribe to view more posts</p>
             <GooglePayButton
-                environment="PRODUCTION"
+                environment="TEST"
                 paymentRequest={{
                     apiVersion: 2,
                     apiVersionMinor: 0,
@@ -32,23 +32,19 @@ export default function GooglePay(){
                     },
                     ],
                     merchantInfo: {
-                    merchantId: '12345678901234567890',
-                    merchantName: 'Demo Merchant',
+                    merchantId: 'BCR2DN4TR2G3VOSN',
+                    merchantName: 'ConnectVerse',
                     },
                     transactionInfo: {
                     totalPriceStatus: 'FINAL',
                     totalPriceLabel: 'Total',
-                    totalPrice: '0.10',
+                    totalPrice: '0.01',
                     currencyCode: 'USD',
                     countryCode: 'US',
                     },
                 }}
                 onLoadPaymentData={paymentRequest => {
-                    console.log('load payment data', paymentRequest);
-                }}
-                onPaymentAuthorized={paymentData => {
-                    console.log(paymentData)
-                    return setSubscription(true)
+                    setSubscription(true)
                 }}
                 buttonType="subscribe"
             />
